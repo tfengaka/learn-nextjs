@@ -13,8 +13,8 @@ export interface ProjectInterface {
 	title: string;
 	description: string;
 	image: string;
-	liveSiteUrl: string;
-	githubUrl: string;
+	liveSite: string;
+	github: string;
 	category: string;
 	id: string;
 	createdBy: {
@@ -30,9 +30,9 @@ export interface UserProfile {
 	name: string;
 	email: string;
 	description: string | null;
-	avatarUrl: string;
-	githubUrl: string | null;
-	linkedinUrl: string | null;
+	avatar: string;
+	github: string | null;
+	linkedIn: string | null;
 	projects: {
 		edges: { node: ProjectInterface }[];
 		pageInfo: {
@@ -49,7 +49,7 @@ export interface SessionInterface extends Session {
 		id: string;
 		name: string;
 		email: string;
-		avatarUrl: string;
+		avatar: string;
 	};
 }
 
