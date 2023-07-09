@@ -116,12 +116,12 @@ body {
 
 /* Form Field */
 .form_field-input {
-	@apply w-full outline-0 bg-light-white-100 rounded-xl p-4;
+	@apply w-full outline outline-transparent bg-light-white-100 rounded-md p-4 border border-transparent hover:border-[#a763ff] focus:border-[#a763ff] focus:outline-[#a763ff];
 }
 
 /* Modal */
 .modal {
-	@apply fixed z-10 left-0 right-0 top-0 bottom-0 mx-auto bg-black/80;
+	@apply fixed z-10 left-0 right-0 top-0 bottom-0 mx-auto bg-black/70;
 }
 
 .modal_wrapper {
@@ -135,7 +135,7 @@ body {
 
 /* Profile Menu */
 .profile_menu-items {
-	@apply flex-col absolute right-1/2 translate-x-1/2 mt-3 p-7 sm:min-w-[300px] min-w-max rounded-xl bg-white border border-nav-border shadow-menu;
+	@apply flex-col absolute right-1/2 translate-x-1/2 mt-3 p-5 sm:min-w-[300px] min-w-max rounded-md bg-white border border-nav-border shadow-menu;
 }
 
 /* Profile Card */
@@ -145,7 +145,7 @@ body {
 
 /* Project Form */
 .form {
-	@apply flex-col w-full lg:pt-24 pt-12 gap-10 text-lg max-w-5xl mx-auto;
+	@apply flex-col w-full lg:pt-24 pt-12 gap-8 text-lg max-w-5xl mx-auto;
 }
 
 .form_image-container {
@@ -153,7 +153,7 @@ body {
 }
 
 .form_image-label {
-	@apply z-10 text-center w-full h-full p-20 text-gray-100 border-2 border-gray-50 border-dashed;
+	@apply z-10 text-center w-full h-full p-20 text-gray-100 border-2 border-gray-50 border-dashed rounded-md;
 }
 
 .form_image-input {

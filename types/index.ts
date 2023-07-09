@@ -4,8 +4,8 @@ export type FormState = {
 	title: string;
 	description: string;
 	image: string;
-	liveSiteUrl: string;
-	githubUrl: string;
+	liveSite: string;
+	github: string;
 	category: string;
 };
 
@@ -57,7 +57,7 @@ export interface ProjectForm {
 	title: string;
 	description: string;
 	image: string;
-	liveSiteUrl: string;
-	githubUrl: string;
+	liveSite: string;
+	github: string;
 	category: string;
 }
