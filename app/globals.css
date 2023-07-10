@@ -116,7 +116,7 @@ body {
 
 /* Form Field */
 .form_field-input {
-	@apply w-full outline outline-transparent bg-light-white-100 rounded-md p-4 border border-transparent hover:border-[#a763ff] focus:border-[#a763ff] focus:outline-[#a763ff];
+	@apply w-full outline outline-transparent bg-light-white-100 rounded-md p-4 border border-transparent hover:border-primary-purple focus:border-primary-purple focus:outline-primary-purple;
 }
 
 /* Modal */

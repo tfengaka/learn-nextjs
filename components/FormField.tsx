@@ -19,15 +19,13 @@ function FormField({
 }: Props) {
 	return (
 		<div className="flexStart flex-col w-full gap-1">
-			<label className="w-full text-gray-100 font-semibold text-sm">
-				{title}
-			</label>
+			<label className="w-full text-gray-100 font-semibold">{title}</label>
 			{textArea ? (
 				<textarea
 					required
 					value={state}
 					placeholder={placeholder}
-					className="form_field-input"
+					className="form_field-input min-h-[90px]"
 					onChange={(e) => setState(e.target.value)}
 				/>
 			) : (
