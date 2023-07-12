@@ -44,7 +44,7 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
 						className="flexStart profile_menu-items"
 						onMouseLeave={() => setOpenModal(false)}
 					>
-						<div className="flex flex-col items-center gap-y-4">
+						<div className="flex flex-col items-center gap-y-4 mb-2">
 							{session?.user?.image && (
 								<Image
 									src={session?.user?.image}
@@ -57,11 +57,11 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
 							<p className="font-semibold">{session?.user?.name}</p>
 						</div>
 
-						<div className="flex flex-col gap-3 mt-5 pt-5 items-start w-full border-t border-nav-border">
+						<div className="flex flex-col gap-1 py-4 items-start w-full border-t border-nav-border">
 							<Menu.Item>
 								<Link
 									href={`/profile/${session?.user?.id}`}
-									className="text-sm"
+									className="text-sm font-semibold hover:bg-slate-200 rounded-md w-full px-4 py-2 transition-colors"
 								>
 									Work Preferences
 								</Link>
@@ -69,25 +69,17 @@ const ProfileMenu = ({ session }: { session: SessionInterface }) => {
 							<Menu.Item>
 								<Link
 									href={`/profile/${session?.user?.id}`}
-									className="text-sm"
-								>
-									Settings
-								</Link>
-							</Menu.Item>
-							<Menu.Item>
-								<Link
-									href={`/profile/${session?.user?.id}`}
-									className="text-sm"
+									className="text-sm font-semibold hover:bg-slate-200 rounded-md w-full px-4 py-2 transition-colors"
 								>
 									Profile
 								</Link>
 							</Menu.Item>
 						</div>
-						<div className="w-full flexStart border-t border-nav-border mt-5 pt-5">
+						<div className="w-full flexStart border-t border-nav-border pt-5">
 							<Menu.Item>
 								<button
 									type="button"
-									className="text-sm"
+									className="text-sm font-semibold bg-primary-purple hover:bg-purple-800 text-white rounded-md w-full p-2 transition-colors"
 									onClick={() => signOut()}
 								>
 									Sign out

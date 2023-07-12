@@ -26,9 +26,9 @@ function Button({
 		<button
 			type={type || "button"}
 			disabled={isLoading}
-			className={`flexCenter gap-3 px-4 py-3 rounded-md text-sm font-semibold max-md:w-full hover:bg-purple-800 transition-colors
-      ${textColor ? textColor : "text-white"}
-      ${isLoading ? "bg-black/50" : bgColor ? bgColor : "bg-primary-purple"}`}
+			className={`flexCenter gap-3 px-4 py-3 rounded-md text-sm font-semibold max-md:w-full transition-colors ${
+				textColor ? textColor : "text-white"
+			} ${isLoading ? "bg-black/50" : bgColor ? bgColor : "bg-primary-purple"}`}
 			onClick={onClick}
 		>
 			{leftIcon && <Image src={leftIcon} width={14} height={14} alt="left" />}

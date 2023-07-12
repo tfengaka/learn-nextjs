@@ -1,20 +1,21 @@
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { categoryFilters } from "~/constants";
-import { createNewProject, fetchToken } from "~/lib/actions";
-import { ProjectForm, SessionInterface } from "~/types";
+import { createNewProject, editProject, fetchToken } from "~/lib/actions";
+import { ProjectForm, ProjectInterface, SessionInterface } from "~/types";
 import Button from "./Button";
 import CustomMenu from "./CustomMenu";
 import FormField from "./FormField";
 
 interface Props {
-	type: string;
+	type: "create" | "edit";
 	session: SessionInterface;
+	project?: ProjectInterface;
 }
 
-function ProjectForm({ type, session }: Props) {
+function ProjectForm({ type, session, project }: Props) {
 	const router = useRouter();
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [formState, setFormState] = useState<ProjectForm>({
@@ -25,6 +26,20 @@ function ProjectForm({ type, session }: Props) {
 		github: "",
 		category: "",
 	});
+
+	useEffect(() => {
+		if (type === "edit" && project) {
+			const ProjectForm: ProjectForm = {
+				title: project.title,
+				description: project.description,
+				liveSite: project.liveSite,
+				github: project.github,
+				category: project.category,
+				image: project.image,
+			};
+			setFormState(ProjectForm);
+		}
+	}, []);
 
 	const handleChangePoster = (event: ChangeEvent<HTMLInputElement>) => {
 		event.preventDefault();
@@ -59,6 +74,10 @@ function ProjectForm({ type, session }: Props) {
 		try {
 			if (type === "create") {
 				await createNewProject(formState, session.user.id, token);
+				router.push("/");
+			}
+			if (type === "edit") {
+				await editProject(project?.id as string, token, formState);
 				router.push("/");
 			}
 		} catch (error) {

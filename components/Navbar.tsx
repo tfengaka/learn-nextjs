@@ -25,7 +25,12 @@ async function Navbar() {
 				{session?.user ? (
 					<>
 						<ProfileMenu session={session} />
-						<Link href={"/create-project"}>Share Work</Link>
+						<Link
+							href={"/project/create"}
+							className="px-4 py-3 rounded-md text-sm font-semibold hover:bg-purple-800 transition-colors bg-primary-purple text-white"
+						>
+							Share Work
+						</Link>
 					</>
 				) : (
 					<AuthProviders />
