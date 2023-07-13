@@ -25,7 +25,7 @@ function Categories() {
 						type="button"
 						onClick={() => handleTags(tag)}
 						className={`px-4 py-2 rounded-lg capitalize whitespace-nowrap hover:bg-light-white-300 ${
-							category === tag
+							category === tag || (!category && tag === "All")
 								? "bg-light-white-300 font-semibold"
 								: "font-medium"
 						}`}
