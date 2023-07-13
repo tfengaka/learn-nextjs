@@ -30,8 +30,8 @@ async function HomePage({ searchParams: { category, endcursor } }: Props) {
 		category,
 		endcursor
 	)) as ProjectSearch;
-	const displayProjects = projectSearch.edges || [];
-	const pagination = projectSearch.pageInfo;
+	const displayProjects = projectSearch?.edges || [];
+	const pagination = projectSearch?.pageInfo;
 	if (displayProjects.length === 0) {
 		return (
 			<section className="flex flex-col paddings">
