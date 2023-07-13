@@ -1,5 +1,6 @@
 import { GraphQLClient } from "graphql-request";
 import {
+	categoryprojectsQuery,
 	createProjectMutation,
 	createUserMutation,
 	deleteProjectMutation,
@@ -98,13 +99,11 @@ export const fetchAllProjects = async (
 	category?: string,
 	endCursor?: string
 ) => {
-	const variables = {
-		category: category,
-		endCursor,
-	};
-
 	client.setHeader("x-api-key", apiKey);
-	return makeGraphQLRequest(projectsQuery, variables);
+	if (category) {
+		return makeGraphQLRequest(categoryprojectsQuery, { category, endCursor });
+	}
+	return makeGraphQLRequest(projectsQuery, { endCursor });
 };
 
 export const getProjectDetails = (id: string) => {
