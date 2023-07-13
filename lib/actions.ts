@@ -98,8 +98,13 @@ export const fetchAllProjects = async (
 	category?: string,
 	endCursor?: string
 ) => {
+	const variables = {
+		category: category || "",
+		endCursor,
+	};
+
 	client.setHeader("x-api-key", apiKey);
-	return makeGraphQLRequest(projectsQuery, { category, endCursor });
+	return makeGraphQLRequest(projectsQuery, variables);
 };
 
 export const getProjectDetails = (id: string) => {

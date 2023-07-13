@@ -27,7 +27,7 @@ interface Props {
 
 async function HomePage({ searchParams: { category, endcursor } }: Props) {
 	const { projectSearch } = (await fetchAllProjects(
-		category as string,
+		category,
 		endcursor
 	)) as ProjectSearch;
 	const displayProjects = projectSearch?.edges || [];
