@@ -99,7 +99,7 @@ export const fetchAllProjects = async (
 	endCursor?: string
 ) => {
 	const variables = {
-		category: category || "",
+		category: category,
 		endCursor,
 	};
 
