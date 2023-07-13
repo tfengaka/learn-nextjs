@@ -25,7 +25,7 @@ interface Props {
 	};
 }
 
-export async function Home({ searchParams: { category, endcursor } }: Props) {
+async function HomePage({ searchParams: { category, endcursor } }: Props) {
 	const { projectSearch } = (await fetchAllProjects(
 		category,
 		endcursor
@@ -69,4 +69,4 @@ export async function Home({ searchParams: { category, endcursor } }: Props) {
 	);
 }
 
-export default Home;
+export default HomePage;
